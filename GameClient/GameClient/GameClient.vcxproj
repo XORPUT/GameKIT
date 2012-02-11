@@ -85,6 +85,7 @@
     <ClCompile Include="scr\GameModel.cpp" />
     <ClCompile Include="scr\GameNetworkInterface.cpp" />
     <ClCompile Include="scr\GameObject.cpp" />
+    <ClCompile Include="src\IdGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GameComputing.h" />
@@ -94,6 +95,7 @@
     <ClInclude Include="include\GameNetworkInterface.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GameModel.h" />
+    <ClInclude Include="include\IdGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

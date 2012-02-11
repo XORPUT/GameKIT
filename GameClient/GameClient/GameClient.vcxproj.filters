@@ -42,6 +42,9 @@
     <ClCompile Include="scr\GameComputing.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
+    <ClCompile Include="src\IdGenerator.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameComputing.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IdGenerator.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
