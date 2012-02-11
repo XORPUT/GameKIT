@@ -4,6 +4,7 @@
 ** hge.relishgames.com
 **
 ** hge_tut07 - Thousand of Hares
+kdf
 */
 
 
