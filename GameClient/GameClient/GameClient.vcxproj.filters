@@ -24,9 +24,6 @@
     <ClCompile Include="scr\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scr\Computing.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="scr\GameControl.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -42,6 +39,9 @@
     <ClCompile Include="scr\GameObject.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
+    <ClCompile Include="scr\GameComputing.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -53,9 +53,6 @@
     <ClInclude Include="include\GameModel.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
-    <ClInclude Include="include\Computing.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
     <ClInclude Include="include\GameNetworkInterface.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
@@ -63,6 +60,9 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameGraphInterface.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameComputing.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
