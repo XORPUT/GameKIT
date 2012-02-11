@@ -138,6 +138,8 @@ bool RenderFunc()
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	int i;
+	
+	GameModel *gm = new GameModel();
 
 	hge = hgeCreate(HGE_VERSION);
 
