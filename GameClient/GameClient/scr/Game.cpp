@@ -15,8 +15,7 @@
 // to the same folder.
 
 
-#include "hge.h"
-#include "hgefont.h"
+#include "Game.h"
 
 
 #define SCREEN_WIDTH  800
