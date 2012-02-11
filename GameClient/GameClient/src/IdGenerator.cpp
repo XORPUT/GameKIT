@@ -15,16 +15,16 @@ IdGenerator::~IdGenerator()
 int IdGenerator::GenerateId()
 {
 	int returnedId;
-	if ((counter == 0) && (HeadStackId == 0))   //Если стек свободных идентефикаторов пуст...
+	if (HeadStackId == 0)  //Если стек свободных идентефикаторов пуст...
 	{
-		PushToStackId(++counter);
+		PushToStackId(counter);
 	}
-	if (counter == HeadStackId->freeIdStack)    //Если существует единственный свободный идентефикатор...
-	{
-		returnedId = PopFromStackId();
-		PushToStackId(++counter);
-	}
-	else                                       //Если в стеке есть освободившиеся идентефикаторы...
+	if (counter >= HeadStackId->freeIdStack)    //Если существует единственный свободный идентефикатор...
+//	{
+		//returnedId = PopFromStackId();
+		//PushToStackId(++counter);
+	//}
+	//else                                       //Если в стеке есть освободившиеся идентефикаторы...
 	{
 		returnedId = PopFromStackId();
 		HeadStackId = HeadStackId->nextCellStackId;
@@ -47,8 +47,14 @@ int IdGenerator::PopFromStackId() //Взять первый свободный идентефикатор
 	else   //Если стек не пуст...
 	{
 		CellStackId* deleteTopCellStackId = HeadStackId;
-		HeadStackId = HeadStackId->nextCellStackId;
+		if (HeadStackId->nextCellStackId == 0)	//Если единственный элемент в стеке
+		{
+			HeadStackId->nextCellStackId = new CellStackId;
+			HeadStackId->nextCellStackId->freeIdStack = ++counter;
+			HeadStackId->nextCellStackId->nextCellStackId = 0;
+		}
 		firstFreeId = HeadStackId->freeIdStack;
+		HeadStackId = HeadStackId->nextCellStackId;
 		delete deleteTopCellStackId;
 	}
 	return firstFreeId;
