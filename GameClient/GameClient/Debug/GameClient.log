@@ -1,0 +1,64 @@
+﻿Build started 12.02.2012 0:41:33.
+     1>Project "C:\GameKIT\GameClient\GameClient\GameClient.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\GameClient.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "Debug\GameClient.unsuccessfulbuild".
+       ClCompile:
+         E:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\GameKIT\hge\include /IC:\GameKIT\GameClient\GameClient\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\Game.cpp src\GameComputing.cpp src\GameControl.cpp src\GameGetDataObj.cpp src\GameGraphInterface.cpp src\GameModel.cpp src\GameNetworkInterface.cpp src\GameObject.cpp src\GameObject_Player.cpp src\GamePaintObj.cpp src\GameViewer.cpp src\IdGenerator.cpp
+         IdGenerator.cpp
+         GameViewer.cpp
+         GamePaintObj.cpp
+         GameObject_Player.cpp
+         GameObject.cpp
+         GameNetworkInterface.cpp
+         GameModel.cpp
+         GameGraphInterface.cpp
+         GameGetDataObj.cpp
+         GameControl.cpp
+         GameComputing.cpp
+         Game.cpp
+         Generating Code...
+       ManifestResourceCompile:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GameClient.exe.embed.manifest.res" Debug\GameClient_manifest.rc 
+       Link:
+         E:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\GameKIT\GameClient\Debug\GameClient.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\GameKIT\hge\lib\vc hge.lib hgehelp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBC.lib /MANIFEST /ManifestFile:"Debug\GameClient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\GameKIT\GameClient\Debug\GameClient.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\GameKIT\GameClient\Debug\GameClient.lib" /MACHINE:X86 Debug\GameClient.exe.embed.manifest.res
+         Debug\Game.obj
+         Debug\GameComputing.obj
+         Debug\GameControl.obj
+         Debug\GameGetDataObj.obj
+         Debug\GameGraphInterface.obj
+         Debug\GameModel.obj
+         Debug\GameNetworkInterface.obj
+         Debug\GameObject.obj
+         Debug\GameObject_Player.obj
+         Debug\GamePaintObj.obj
+         Debug\GameViewer.obj
+         Debug\IdGenerator.obj
+       Manifest:
+         Deleting file "Debug\GameClient.exe.embed.manifest".
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\GameClient.exe.embed.manifest" /manifest Debug\GameClient.exe.intermediate.manifest
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GameClient.exe.embed.manifest.res" Debug\GameClient_manifest.rc 
+       LinkEmbedManifest:
+         E:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\GameKIT\GameClient\Debug\GameClient.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\GameKIT\hge\lib\vc hge.lib hgehelp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBC.lib /MANIFEST /ManifestFile:"Debug\GameClient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\GameKIT\GameClient\Debug\GameClient.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\GameKIT\GameClient\Debug\GameClient.lib" /MACHINE:X86 Debug\GameClient.exe.embed.manifest.res
+         Debug\Game.obj
+         Debug\GameComputing.obj
+         Debug\GameControl.obj
+         Debug\GameGetDataObj.obj
+         Debug\GameGraphInterface.obj
+         Debug\GameModel.obj
+         Debug\GameNetworkInterface.obj
+         Debug\GameObject.obj
+         Debug\GameObject_Player.obj
+         Debug\GamePaintObj.obj
+         Debug\GameViewer.obj
+         Debug\IdGenerator.obj
+         GameClient.vcxproj -> C:\GameKIT\GameClient\Debug\GameClient.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\GameClient.unsuccessfulbuild".
+         Touching "Debug\GameClient.lastbuildstate".
+     1>Done Building Project "C:\GameKIT\GameClient\GameClient\GameClient.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.21
