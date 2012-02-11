@@ -85,16 +85,22 @@
     <ClCompile Include="scr\GameModel.cpp" />
     <ClCompile Include="scr\GameNetworkInterface.cpp" />
     <ClCompile Include="scr\GameObject.cpp" />
+    <ClCompile Include="src\GameGetDataObj.cpp" />
+    <ClCompile Include="src\GamePaintObj.cpp" />
+    <ClCompile Include="src\GameViewer.cpp" />
     <ClCompile Include="src\IdGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GameComputing.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameControl.h" />
+    <ClInclude Include="include\GameGetDataObj.h" />
     <ClInclude Include="include\GameGraphInterface.h" />
     <ClInclude Include="include\GameNetworkInterface.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GameModel.h" />
+    <ClInclude Include="include\GamePaintObj.h" />
+    <ClInclude Include="include\GameViewer.h" />
     <ClInclude Include="include\IdGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
