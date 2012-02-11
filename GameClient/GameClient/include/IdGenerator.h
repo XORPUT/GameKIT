@@ -1,3 +1,8 @@
+#ifndef IDGENERATOR_H
+#define IDGENERATOR_H
+
+
+
 /*
 	Класс описывающий операции связанные с ID объектов
 */
@@ -22,3 +27,14 @@ private:
         };
 	CellStackId *HeadStackId; //указатель на начало стека
 };
+
+
+
+
+
+
+
+
+
+
+#endif

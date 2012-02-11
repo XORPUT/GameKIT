@@ -1,4 +1,6 @@
-#include "IdGenerator.h"
+#ifndef GAMEOBJECT_H
+#define GAMEOBJECT_H
+
 #include <String>
 /*
 	Базовый класс "Объект"
@@ -11,6 +13,7 @@ public:
 
 	void Init(int id);	//Инициализация объекта
 	void setId(int id);	//Присвоить идентификатор объекту
+	int getId();	//Получить идентификатор объекта
 
 protected:
 	int objId;	//Уникальный идентификатор объекта
@@ -23,3 +26,6 @@ protected:
 
 private:
 };
+
+
+#endif

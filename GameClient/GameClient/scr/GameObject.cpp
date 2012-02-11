@@ -19,3 +19,8 @@ void GameObject::setId(int id)
 {
 	objId = id;
 };
+
+int GameObject::getId()
+{
+	return objId;
+};
