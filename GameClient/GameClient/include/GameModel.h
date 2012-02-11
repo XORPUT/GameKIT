@@ -1,7 +1,11 @@
 #ifndef GAMEMODEL_H
 #define GAMEMODEL_H
 
+#include <vector>
+
 #include "GameObject.h"
+#include "GameGetDataObj.h"
+
 #include "IdGenerator.h"
 
 #include "GameObject_Player.h"
@@ -14,12 +18,13 @@ class GameModel
 public:
 	GameModel();
 	~GameModel();
-
+	int AddPlayer();	//Добавляет игрока, возвращает его идентификатор
 protected:
 
 private:
 	IdGenerator *generatorId;
-	GameObject_Player *player1;
+	std::vector<GameObject_Player> players;
+
 };
 
 

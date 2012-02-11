@@ -3,12 +3,16 @@
 GameModel::GameModel()
 {
 	generatorId = new IdGenerator();
-	player1 = new GameObject_Player();
-	player1->Init( generatorId->GenerateId() );
-	int idPlayer = player1->getId();
 };
 
 GameModel::~GameModel()
 {
 
+};
+
+int GameModel::AddPlayer()
+{
+	GameObject_Player *newPlayer = new GameObject_Player();
+	//ÄÎÏÈÑÀÒÜ ÔÓÍÊÖÈÞ!!!!!!!!!!!!!!!!!!!!!!!!!
+	return newPlayer->getId();
 };
