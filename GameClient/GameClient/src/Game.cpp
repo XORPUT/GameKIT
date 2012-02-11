@@ -17,10 +17,6 @@
 
 #include "Game.h"
 
-
-#define SCREEN_WIDTH  800
-#define SCREEN_HEIGHT 600
-
 #define MIN_OBJECTS	100
 #define MAX_OBJECTS 2000
 
@@ -102,9 +98,9 @@ bool FrameFunc()
 	for(i=0;i<nObjects;i++)
 	{
 		pObjects[i].x+=pObjects[i].dx*dt;
-		if(pObjects[i].x>SCREEN_WIDTH || pObjects[i].x<0) pObjects[i].dx=-pObjects[i].dx;
+		if(pObjects[i].x>GetSystemMetrics(SM_CXSCREEN) || pObjects[i].x<0) pObjects[i].dx=-pObjects[i].dx;
 		pObjects[i].y+=pObjects[i].dy*dt;
-		if(pObjects[i].y>SCREEN_HEIGHT || pObjects[i].y<0) pObjects[i].dy=-pObjects[i].dy;
+		if(pObjects[i].y>GetSystemMetrics(SM_CYSCREEN) || pObjects[i].y<0) pObjects[i].dy=-pObjects[i].dy;
 		pObjects[i].scale+=pObjects[i].dscale*dt;
 		if(pObjects[i].scale>2 || pObjects[i].scale<0.5) pObjects[i].dscale=-pObjects[i].dscale;
 		pObjects[i].rot+=pObjects[i].drot*dt;
@@ -143,14 +139,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	// Set desired system states and initialize HGE
 
-	hge->System_SetState(HGE_LOGFILE, "hge_tut07.log");
+	hge->System_SetState(HGE_LOGFILE, "Game.log");
 	hge->System_SetState(HGE_FRAMEFUNC, FrameFunc);
 	hge->System_SetState(HGE_RENDERFUNC, RenderFunc);
-	hge->System_SetState(HGE_TITLE, "HGE Tutorial 07 - Thousand of Hares");
+	hge->System_SetState(HGE_TITLE, "GameDevKit");
 	hge->System_SetState(HGE_USESOUND, false);
-	hge->System_SetState(HGE_WINDOWED, true);
-	hge->System_SetState(HGE_SCREENWIDTH, SCREEN_WIDTH);
-	hge->System_SetState(HGE_SCREENHEIGHT, SCREEN_HEIGHT);
+	hge->System_SetState(HGE_WINDOWED, false);
+	hge->System_SetState(HGE_SCREENWIDTH, GetSystemMetrics(SM_CXSCREEN));
+	hge->System_SetState(HGE_SCREENHEIGHT, GetSystemMetrics(SM_CYSCREEN));
 	hge->System_SetState(HGE_SCREENBPP, 32);
 
 	if(hge->System_Initiate())
@@ -173,7 +169,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		spr=new hgeSprite(tex,0,0,64,64);
 		spr->SetHotSpot(32,32);
 
-		bgspr=new hgeSprite(bgtex,0,0,800,600);
+		bgspr=new hgeSprite(bgtex,0,0,GetSystemMetrics(SM_CXSCREEN),GetSystemMetrics(SM_CYSCREEN));
 		bgspr->SetBlendMode(BLEND_COLORADD | BLEND_ALPHABLEND | BLEND_NOZWRITE);
 		bgspr->SetColor(0xFF000000,0);
 		bgspr->SetColor(0xFF000000,1);
@@ -187,8 +183,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 		for(i=0;i<MAX_OBJECTS;i++)
 		{
-			pObjects[i].x=hge->Random_Float(0,SCREEN_WIDTH);
-			pObjects[i].y=hge->Random_Float(0,SCREEN_HEIGHT);
+			pObjects[i].x=hge->Random_Float(0,GetSystemMetrics(SM_CXSCREEN));
+			pObjects[i].y=hge->Random_Float(0,GetSystemMetrics(SM_CYSCREEN));
 			pObjects[i].dx=hge->Random_Float(-200,200);
 			pObjects[i].dy=hge->Random_Float(-200,200);
 			pObjects[i].scale=hge->Random_Float(0.5f,2.0f);
