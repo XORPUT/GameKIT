@@ -3,7 +3,7 @@
 
 IdGenerator::IdGenerator()
 {
-	HeadStackId = NULL;
+	HeadStackId = 0;
 };
 
 IdGenerator::~IdGenerator()
@@ -24,7 +24,7 @@ void IdGenerator::FreeId(int delId)
 int IdGenerator::PopFromStackId() //Взять первый свободный идентефикатор
 {
 	int firstFreeId;
-	if (HeadStackId == NULL)    //Если стек пуст...   
+	if (HeadStackId == 0)    //Если стек пуст...   
 	{
 		return -1;
 	}   
@@ -43,10 +43,10 @@ void IdGenerator::PushToStackId(int freeId) //Положить освободившийся идентефика
 	CellStackId* TempCell;
 	TempCell = new CellStackId;
 	TempCell->freeIdStack = freeId;
-	if (HeadStackId == NULL) 
+	if (HeadStackId == 0) 
 	{
 		HeadStackId = TempCell;
-		TempCell->nextCellStackId = NULL;
+		TempCell->nextCellStackId = 0;
 	}
 	else
 	{
@@ -57,7 +57,7 @@ void IdGenerator::PushToStackId(int freeId) //Положить освободившийся идентефика
 
 void IdGenerator::DeleteStackId()
 {
-	while (HeadStackId != NULL)
+	while (HeadStackId != 0)
 	{
 		CellStackId* TempPointer = HeadStackId->nextCellStackId;
 		delete HeadStackId;

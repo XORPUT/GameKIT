@@ -7,7 +7,7 @@ public:
 	IdGenerator();
 	~IdGenerator();
 	int GenerateId(); //Генерация свободного идентефикатора
-	void FreeId(int delId) // Освободить идентефикатор
+	void FreeId(int delId); // Освободить идентефикатор
 protected:
 private:
 	int PopFromStackId(); //Взять свободный идентефикатор со стека свободных идентефикаторов
