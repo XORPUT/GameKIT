@@ -78,10 +78,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="scr\Computing.cpp" />
     <ClCompile Include="scr\Game.cpp" />
+    <ClCompile Include="scr\GameControl.cpp" />
+    <ClCompile Include="scr\GameGraphInterface.cpp" />
+    <ClCompile Include="scr\GameModel.cpp" />
+    <ClCompile Include="scr\GameNetworkInterface.cpp" />
+    <ClCompile Include="scr\GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Computing.h" />
     <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\GameControl.h" />
+    <ClInclude Include="include\GameGraphInterface.h" />
+    <ClInclude Include="include\GameNetworkInterface.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\GameModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
