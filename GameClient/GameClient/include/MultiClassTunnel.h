@@ -8,6 +8,10 @@
 #include "GameSetting.h"
 
 
+/*
+	Класс, отвечающий за межклассовое взаимодействие
+*/
+
 class MultiClassTunnel
 {
 public:
