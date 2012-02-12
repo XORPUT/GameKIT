@@ -25,6 +25,11 @@ void Game::initGame()
 	multiClassTunnel = new MultiClassTunnel();
 };
 
+void Game::destroyGame()
+{
+	releaseEngine();
+};
+
 void Game::initEngine()
 {
 	gameEngine = hgeCreate(HGE_VERSION);
@@ -50,8 +55,13 @@ void Game::initEngine()
 		//Ошибка инициализации
 		MessageBox(0, gameEngine->System_GetErrorMessage(), "Error", MB_OK | MB_ICONERROR | MB_APPLMODAL);
 	}
+};
 
-
+void Game::releaseEngine()
+{
+	// Clean up and shutdown
+	gameEngine->System_Shutdown();
+	gameEngine->Release();
 };
 
 /*

@@ -20,11 +20,13 @@ class Game
 {
 public:
 	void initGame();	//Инициализация игры
+	void destroyGame();	//Закрытие игры
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 
 private:
 	void initEngine();	//Инициализация игрового движка HGE
+	void releaseEngine();	//Завершение работы игрового движка HGE
 
 	HGE *gameEngine;	//Игровой движок HGE
 
