@@ -30,6 +30,9 @@ bool GameControl::FrameFunc()
 	
 		gameModel->setMouseCoord(*coordX, *coordY);
 
+		delete coordX;
+		delete coordY;
+
 		int countWheelMoves = gameEngine->Input_GetMouseWheel(); //¬озвращает число прокрученных зубчиков колесика мышки относительно предыдущего вызова функции кадра. ѕоложительное значение означает, что колесико крутилось вперед, от пользовател€; отрицательное значение означает, что колесико кротилось назад, к пользователю. ≈сли колесо не вращалось, значение равно 0. 
 	}	
 	return false; 
