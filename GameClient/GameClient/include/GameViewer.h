@@ -21,7 +21,7 @@ public:
 
 	void SetGameEngine(HGE *gEngine); // Принятие указателя на движок
 	void PaintObj(GameObject *objId); // Отрисовка одного объекта
-	void pushDataObj(std::vector<GameObject> objId, int countObjId); // Получает список объектов для отрисовки
+	void PushDataObj(std::vector<GameObject> objId); // Получает список объектов для отрисовки
 protected:
 
 private:
