@@ -20,11 +20,9 @@ void GameObject::setId(int id)
 	objId = id;
 };
 
-void GameObject::setCoord(float *coord)
+void GameObject::setCoord(Point coord)
 {
-	float *objCoord = new float[2];
-	objCoord[0] = coord[0];
-	objCoord[1] = coord[1];
+	objCoord = coord;
 };
 
 void GameObject::setTexture(std::string texture)
@@ -37,7 +35,7 @@ int GameObject::getId()
 	return objId;
 };
 
-float* GameObject::getCoord()
+Point GameObject::getCoord()
 {
 	return objCoord;
 };

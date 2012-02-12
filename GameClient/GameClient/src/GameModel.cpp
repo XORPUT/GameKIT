@@ -32,9 +32,9 @@ bool GameModel::FrameFunc()
 
 void GameModel::setMouseCoord(float mouseX, float mouseY)
 {
-	float *mouseCoord = new float[2];
-	mouseCoord[0] = mouseX;
-	mouseCoord[1] = mouseY;
+	Point mouseCoord;
+	mouseCoord.x = mouseX;
+	mouseCoord.y = mouseY;
 	mouse->setCoord(mouseCoord);
 	mouse->setId(generatorId->GenerateId());
 	mouse->setTexture("mouse.png");
