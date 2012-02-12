@@ -9,15 +9,16 @@
 
 
 /*
-	Класс, отвечающий за межклассовое взаимодействие
+	Класс, отвечающий за межклассовое взаимодействие (шлюз)
 */
 
 class MultiClassTunnel
 {
 public:
-	MultiClassTunnel();
+	MultiClassTunnel(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork);
 	~MultiClassTunnel();
-	void Init(GameSetting gSetting, GameModel gModel, GameControl gControl, GameNetwork gNetwork);
+	
+	void Init(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork);	//Инициализация шлюза
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 

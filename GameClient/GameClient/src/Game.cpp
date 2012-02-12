@@ -23,7 +23,7 @@ void Game::initGame()
 	gameControl = new GameControl(gameEngine);
 	//Расскомментить когда появится класс //        gameViewer = new GameViewer();
 	gameNetwork = new GameNetwork();
-	multiClassTunnel = new MultiClassTunnel();
+	multiClassTunnel = new MultiClassTunnel(gameSetting, gameModel, gameControl, gameNetwork);
 	
 	//инициализация движка
 	game->initEngine();
