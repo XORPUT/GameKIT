@@ -10,28 +10,40 @@ void GameViewer::SetGameEngine(HGE *gEngine)
 	gameEngine = gEngine;
 };
 
-void GameViewer::PaintOneObj(GameObject *objId)
+void GameViewer::PaintObj(GameObject *objId)
 {
-	
-};
-
-void GameViewer::PaintObjMouse(GameObject *objId)
-{
-	int a = 1;
-
+	 
 	// Загрузка текстуры
-/*	HTEXTURE mouseTexture = gameEngine->Texture_Load("mouse.png");
+	HTEXTURE mouseTexture = gameEngine->Texture_Load(objId->getTexture().c_str());
 
 	// Загрузило ли?
 	if(!mouseTexture)
 	{
 			gameEngine->System_Shutdown();
-			gameEngine->Release();			
+			gameEngine->Release();
 	}
 	
-//	hgeSprite *sprMouseTexture;
-//	sprMouseTexture = new hgeSprite(mouseTexture,0,0,64,64);
-	
-*/
+	sprObject pObjects;
+
+	pObjects.x = objId->getCoord().x;
+	pObjects.y = objId->getCoord().y;
+	pObjects.scale = 1;
+	pObjects.rot = 0;
+
+	hgeSprite *spr;
+	spr = new hgeSprite(mouseTexture,0,0,32,32);
+
+	gameEngine->Gfx_Clear(0);
+
+	gameEngine->Gfx_BeginScene();
+
+	//spr->RenderEx(pObjects.x, pObjects.y, pObjects.rot, pObjects.scale);
+
+	gameEngine->Gfx_EndScene();
 
 }; 
+
+void GameViewer::pushDataObj(std::vector<GameObject> objId, int counObjtId)
+{
+	
+};

@@ -3,6 +3,11 @@
 
 #include "hge.h"
 #include "GameObject.h"
+#include "hgefont.h"
+#include "hgesprite.h"
+#include "Point.h"
+#include "sprObject.h"
+#include "vector"
 
 /*
 	Класс отображение объектов на экране
@@ -15,12 +20,13 @@ public:
 	~GameViewer();
 
 	void SetGameEngine(HGE *gEngine); // Принятие указателя на движок
-	void PaintOneObj(GameObject *objId); // Отрисовка одного объекта
-	void PaintObjMouse(GameObject *objId); // Отрисовка объекта "мыши"
+	void PaintObj(GameObject *objId); // Отрисовка одного объекта
+	void pushDataObj(std::vector<GameObject> objId, int countObjId); // Получает список объектов для отрисовки
 protected:
 
 private:
 	HGE *gameEngine; // Указатель на игровой движок
+	std::vector<GameObject> arrayObjects; // Массив объектов
 };
 
 #endif

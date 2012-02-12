@@ -9,7 +9,7 @@
 #include "GameNetwork.h"
 #include "GameSetting.h"
 #include "MultiClassTunnel.h"
-
+#include "hge.h"
 
 /*
 	Самый главный класс в игре.
