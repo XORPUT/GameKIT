@@ -18,12 +18,13 @@ class GameModel
 public:
 	GameModel();
 	~GameModel();
-	int AddPlayer();	//Добавляет игрока, возвращает его идентификатор
+	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
+	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
 protected:
 
 private:
-	IdGenerator *generatorId;
-	std::vector<GameObject_Player> players;
+	IdGenerator *generatorId;	//Генератор Id для объектов
+	std::vector<GameObject_Player> players;	//Игроки
 
 };
 
