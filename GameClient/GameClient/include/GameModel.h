@@ -28,7 +28,7 @@ public:
 	/************************************************************************/
 	/* Взаимодействие с "Контролем"                                         */
 	/************************************************************************/
-	void getMouseCoord(float mouseX, float mouseY);
+	void setMouseCoord(float mouseX, float mouseY);
 protected:
 
 private:

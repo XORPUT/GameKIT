@@ -29,7 +29,7 @@ bool GameModel::FrameFunc()
 };
 
 
-void GameModel::getMouseCoord(float mouseX, float mouseY)
+void GameModel::setMouseCoord(float mouseX, float mouseY)
 {
 	mouseCoordX = mouseX;
 	mouseCoordY = mouseY;
