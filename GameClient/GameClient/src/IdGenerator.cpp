@@ -19,15 +19,13 @@ int IdGenerator::GenerateId()
 	{
 		PushToStackId(counter);
 	}
-	if (counter >= HeadStackId->freeIdStack)    //Если существует единственный свободный идентефикатор...
-//	{
-		//returnedId = PopFromStackId();
-		//PushToStackId(++counter);
-	//}
-	//else                                       //Если в стеке есть освободившиеся идентефикаторы...
+	if (counter == HeadStackId->freeIdStack)    //Если существует единственный свободный идентефикатор...
+    {
+		returnedId = PopFromStackId();
+	}
+	else     //Если в стеке есть освободившиеся идентефикаторы...
 	{
 		returnedId = PopFromStackId();
-		HeadStackId = HeadStackId->nextCellStackId;
 	}
 	return returnedId;
 };
