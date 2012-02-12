@@ -22,6 +22,7 @@ public:
 	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
 	bool frameStarted();	//Вызывается когда начинается новый frame(кадр)
+	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 
 private:

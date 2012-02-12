@@ -23,7 +23,7 @@ void GameModel::deletePlayer(GameObject_Player *player)
 	delete player;
 };
 
-bool frameStarted()
+bool GameModel::FrameFunc()
 {
 	return false;
 };

@@ -18,5 +18,9 @@ void MultiClassTunnel::Init(GameSetting gSetting, GameModel gModel, GameControl 
 
 bool MultiClassTunnel::FrameFunc()
 {
+	gameControl->FrameFunc();
+	gameModel->FrameFunc();
+//	gameViewer->FrameFunc();
+
 	return false;
 };
