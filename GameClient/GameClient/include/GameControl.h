@@ -13,7 +13,7 @@ public:
 	GameControl(HGE* gEngine);
 	~GameControl();
 	bool FrameFunc();	//Функция, которая запускается движком при обновлении кадра
-	void SetGameEngine(HGE* gEngine); // Принимает указаьтель на движок
+	void SetGameEngine(HGE* gEngine); // Принимает указатель на движок
 	void SetModel (GameModel* gModel); //Принимает указатель на модель
 protected:
 
