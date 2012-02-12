@@ -32,10 +32,13 @@ bool GameModel::FrameFunc()
 
 void GameModel::setMouseCoord(float mouseX, float mouseY)
 {
-	float *mouseCoord;
+	float *mouseCoord = new float[2];
 	mouseCoord[0] = mouseX;
 	mouseCoord[1] = mouseY;
 	mouse->setCoord(mouseCoord);
+	mouse->setId(generatorId->GenerateId());
+	mouse->setTexture("mouse.png");
+	paintMouse();
 };
 
 void GameModel::SetViewer(GameViewer* gViewer)
@@ -43,8 +46,7 @@ void GameModel::SetViewer(GameViewer* gViewer)
 	this->gameViewer = gViewer;
 };
 
-void paintMouse(float x, float y)
+void GameModel::paintMouse()
 {
-	GameViewer.PaintObjMouse(mouse);
-
+	gameViewer->PaintObjMouse(mouse);
 };

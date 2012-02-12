@@ -22,6 +22,7 @@ void GameObject::setId(int id)
 
 void GameObject::setCoord(float *coord)
 {
+	float *objCoord = new float[2];
 	objCoord[0] = coord[0];
 	objCoord[1] = coord[1];
 };
