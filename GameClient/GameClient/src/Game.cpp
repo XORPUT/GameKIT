@@ -15,14 +15,20 @@ bool MyFrameFuncHelper() {
 
 void Game::initGame()
 {
-	game->initEngine();
+	//создание игрового движка HGE
+	gameEngine = hgeCreate(HGE_VERSION);
 
 	gameSetting = new GameSetting();
 	gameModel = new GameModel();
-	gameControl = new GameControl();
+	gameControl = new GameControl(gameEngine);
 	//Расскомментить когда появится класс //        gameViewer = new GameViewer();
 	gameNetwork = new GameNetwork();
 	multiClassTunnel = new MultiClassTunnel();
+	
+	//инициализация движка
+	game->initEngine();
+
+	
 };
 
 void Game::destroyGame()
@@ -69,6 +75,7 @@ void Game::releaseEngine()
 */
 bool Game::FrameFunc()
 {
+	multiClassTunnel->FrameFunc();
 	return false;
 };
 

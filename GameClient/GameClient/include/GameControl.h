@@ -9,13 +9,14 @@
 class GameControl
 {
 public:
-	GameControl();
+	GameControl(HGE* gEngine);
 	~GameControl();
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
+	void SetGameEngine(HGE* gEngine); //
 protected:
 
 private:
-
+	HGE* gameEngine;
 };
 
 #endif
