@@ -37,6 +37,7 @@ public:
 	void SetViewer(GameViewer* gViewer);	//Установить Viewer
 	/************************************************************************/
 
+	void paintMouse(float x, float y);	//Указывает Виду нарисовать мышь
 
 protected:
 
@@ -47,7 +48,7 @@ private:
 	IdGenerator *generatorId;	//Генератор Id для объектов
 	std::vector<GameObject_Player> players;	//Игроки
 
-	float mouseCoordX, mouseCoordY;	//Текущие координаты мыши
+	GameObject *mouse;	//Мышка игрока
 };
 
 
