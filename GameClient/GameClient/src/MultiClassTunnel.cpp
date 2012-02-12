@@ -14,9 +14,14 @@ MultiClassTunnel::~MultiClassTunnel()
 void MultiClassTunnel::Init(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork)
 {
 	gameSetting = gSetting;
+
 	gameModel = gModel;
+
 	gameControl = gControl;
+	gameControl->SetModel(gameModel);
+
 	gameNetwork = gameNetwork;
+
 	//gameViewer = gViewer;
 };
 
