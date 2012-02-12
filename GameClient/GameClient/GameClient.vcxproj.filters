@@ -37,12 +37,12 @@
     <Filter Include="Source Files\Network">
       <UniqueIdentifier>{9aa60c15-38a3-450e-9dc7-b65998858ae8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Others">
+      <UniqueIdentifier>{4f52c7a8-4e19-47ce-83ce-8eac749184b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameViewer.cpp">
-      <Filter>Source Files\Viewer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GamePaintObj.cpp">
       <Filter>Source Files\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="src\GameGetDataObj.cpp">
@@ -98,9 +98,6 @@
     <ClInclude Include="include\GameViewer.h">
       <Filter>Header Files\Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="include\GamePaintObj.h">
-      <Filter>Header Files\Viewer</Filter>
-    </ClInclude>
     <ClInclude Include="include\GameGetDataObj.h">
       <Filter>Header Files\Viewer</Filter>
     </ClInclude>
@@ -124,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="include\GameObject_Mob.h">
       <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Point.h">
+      <Filter>Header Files\Others</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
