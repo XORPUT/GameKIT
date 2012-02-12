@@ -1,3 +1,4 @@
-struct Time {
-	int hh, mm, ss;
+struct Point {
+	int x;
+	int y;
 };
