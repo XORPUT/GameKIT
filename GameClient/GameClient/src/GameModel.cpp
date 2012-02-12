@@ -28,11 +28,28 @@ bool GameModel::FrameFunc()
 {
 	GameObject *obj = new GameObject();
 	obj->setId( generatorId->GenerateId() );
-
 	obj->setTexture("image.jpg");
-	paintSendListObject(sendListObject);
+	sendListObject->push_back(*obj);
+
+	GameObject *obj2 = new GameObject();
+	obj2->setId( generatorId->GenerateId() );
+	obj2->setTexture("image.jpg");
+	sendListObject->push_back(*obj2);
+	generatorId->FreeId( obj2->getId() );
+	delete obj2;
+
+	GameObject *obj3 = new GameObject();
+	obj3->setId( generatorId->GenerateId() );
+	obj3->setTexture("image.jpg");
+	sendListObject->push_back(*obj3);
+	generatorId->FreeId( obj3->getId() );
+	delete obj3;
+
 	generatorId->FreeId( obj->getId() );
 	delete obj;
+
+
+
 	return false;
 };
 
