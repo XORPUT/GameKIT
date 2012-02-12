@@ -1,4 +1,15 @@
-#ifndef GAMECOMPUTING_H
-#define GAMECOMPUTING_H
+#ifndef GAMECALCULATION_H
+#define GAMECALCULATION_H
+
+class GameCalculation
+{
+public:
+	GameCalculation();
+	~GameCalculation();
+protected:
+
+private:
+
+};
 
 #endif

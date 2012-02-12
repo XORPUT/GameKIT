@@ -79,9 +79,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GameComputing.cpp" />
+    <ClCompile Include="src\GameCalculation.cpp" />
     <ClCompile Include="src\GameControl.cpp" />
     <ClCompile Include="src\GameGetDataObj.cpp" />
+    <ClCompile Include="src\GameSetting.cpp" />
     <ClCompile Include="src\MultiClassTunnel.cpp" />
     <ClCompile Include="src\GameModel.cpp" />
     <ClCompile Include="src\GameNetwork.cpp" />
@@ -92,10 +93,11 @@
     <ClCompile Include="src\IdGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\GameComputing.h" />
+    <ClInclude Include="include\GameCalculation.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameControl.h" />
     <ClInclude Include="include\GameGetDataObj.h" />
+    <ClInclude Include="include\GameSetting.h" />
     <ClInclude Include="include\MultiClassTunnel.h" />
     <ClInclude Include="include\GameNetwork.h" />
     <ClInclude Include="include\GameObject.h" />

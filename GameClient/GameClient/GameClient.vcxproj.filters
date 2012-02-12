@@ -48,9 +48,6 @@
     <ClCompile Include="src\GameGetDataObj.cpp">
       <Filter>Source Files\Viewer</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameComputing.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameModel.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -75,6 +72,12 @@
     <ClCompile Include="src\GameNetwork.cpp">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameCalculation.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameSetting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -84,9 +87,6 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameModel.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameComputing.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\IdGenerator.h">
@@ -112,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="include\GameNetwork.h">
       <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameCalculation.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameSetting.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
