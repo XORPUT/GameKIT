@@ -81,7 +81,6 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameCalculation.cpp" />
     <ClCompile Include="src\GameControl.cpp" />
-    <ClCompile Include="src\GameGetDataObj.cpp" />
     <ClCompile Include="src\GameObject_Mob.cpp" />
     <ClCompile Include="src\GameSetting.cpp" />
     <ClCompile Include="src\MultiClassTunnel.cpp" />
@@ -96,7 +95,6 @@
     <ClInclude Include="include\GameCalculation.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameControl.h" />
-    <ClInclude Include="include\GameGetDataObj.h" />
     <ClInclude Include="include\GameObject_Mob.h" />
     <ClInclude Include="include\GameSetting.h" />
     <ClInclude Include="include\MultiClassTunnel.h" />
@@ -107,6 +105,7 @@
     <ClInclude Include="include\GameViewer.h" />
     <ClInclude Include="include\IdGenerator.h" />
     <ClInclude Include="include\Point.h" />
+    <ClInclude Include="include\sprObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

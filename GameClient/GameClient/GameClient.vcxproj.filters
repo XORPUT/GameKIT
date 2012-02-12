@@ -45,9 +45,6 @@
     <ClCompile Include="src\GameViewer.cpp">
       <Filter>Source Files\Viewer</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameGetDataObj.cpp">
-      <Filter>Source Files\Viewer</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameModel.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -98,9 +95,6 @@
     <ClInclude Include="include\GameViewer.h">
       <Filter>Header Files\Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="include\GameGetDataObj.h">
-      <Filter>Header Files\Viewer</Filter>
-    </ClInclude>
     <ClInclude Include="include\GameObject_Player.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
@@ -123,6 +117,9 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\Point.h">
+      <Filter>Header Files\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sprObject.h">
       <Filter>Header Files\Others</Filter>
     </ClInclude>
   </ItemGroup>
