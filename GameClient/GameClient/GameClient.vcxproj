@@ -82,6 +82,7 @@
     <ClCompile Include="src\GameCalculation.cpp" />
     <ClCompile Include="src\GameControl.cpp" />
     <ClCompile Include="src\GameGetDataObj.cpp" />
+    <ClCompile Include="src\GameObject_Mob.cpp" />
     <ClCompile Include="src\GameSetting.cpp" />
     <ClCompile Include="src\MultiClassTunnel.cpp" />
     <ClCompile Include="src\GameModel.cpp" />
@@ -97,6 +98,7 @@
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameControl.h" />
     <ClInclude Include="include\GameGetDataObj.h" />
+    <ClInclude Include="include\GameObject_Mob.h" />
     <ClInclude Include="include\GameSetting.h" />
     <ClInclude Include="include\MultiClassTunnel.h" />
     <ClInclude Include="include\GameNetwork.h" />

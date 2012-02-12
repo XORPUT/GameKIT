@@ -3,13 +3,14 @@
 
 
 #include "GameObject.h"
+#include "GameObject_Mob.h"
 #include "GameObject_Player.h"
 
 /*
 	Класс - "Игрок"
 */
 
-class GameObject_Player : public GameObject
+class GameObject_Player : public GameObject_Mob
 {
 public:
 

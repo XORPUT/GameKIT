@@ -28,14 +28,14 @@ public:
 	/************************************************************************/
 	/* Взаимодействие с "Контролем"                                         */
 	/************************************************************************/
-	void setMouseCoord(float mouseX, float mouseY);
+	void setMouseCoord(float mouseX, float mouseY);	//Установить текущие координаты мыши
 protected:
 
 private:
 	IdGenerator *generatorId;	//Генератор Id для объектов
 	std::vector<GameObject_Player> players;	//Игроки
 
-	float mouseCoordX, mouseCoordY;
+	float mouseCoordX, mouseCoordY;	//Текущие координаты мыши
 };
 
 

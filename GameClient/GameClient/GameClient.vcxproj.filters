@@ -78,6 +78,9 @@
     <ClCompile Include="src\GameSetting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameObject_Mob.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="include\GameSetting.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameObject_Mob.h">
+      <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
