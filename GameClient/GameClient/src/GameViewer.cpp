@@ -20,15 +20,18 @@ void GameViewer::PaintObjMouse(GameObject *objId)
 	int a = 1;
 
 	// Загрузка текстуры
-//	HTEXTURE mouseTexture = gameEngine->Texture_Load("mouse.png");
+/*	HTEXTURE mouseTexture = gameEngine->Texture_Load("mouse.png");
 
 	// Загрузило ли?
-//	if(!mouseTexture)
-//	{
-	////		gameEngine->System_Shutdown();
-	//		gameEngine->Release();			
-	//}
-
-
+	if(!mouseTexture)
+	{
+			gameEngine->System_Shutdown();
+			gameEngine->Release();			
+	}
 	
+//	hgeSprite *sprMouseTexture;
+//	sprMouseTexture = new hgeSprite(mouseTexture,0,0,64,64);
+	
+*/
+
 }; 
