@@ -26,7 +26,13 @@ void GameModel::deletePlayer(GameObject_Player *player)
 
 bool GameModel::FrameFunc()
 {
+	GameObject *obj = new GameObject();
+	obj->setId( generatorId->GenerateId() );
+
+	obj->setTexture("image.jpg");
 	paintSendListObject(sendListObject);
+	generatorId->FreeId( obj->getId() );
+	delete obj;
 	return false;
 };
 
