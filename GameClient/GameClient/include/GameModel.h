@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "GameViewer.h"
 #include "GameObject.h"
 #include "GameGetDataObj.h"
 
@@ -19,19 +20,30 @@ public:
 	GameModel();
 	~GameModel();
 	
+	
+	
 	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
-	bool frameStarted();	//Вызывается когда начинается новый frame(кадр)
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 
 
 	/************************************************************************/
 	/* Взаимодействие с "Контролем"                                         */
-	/************************************************************************/
 	void setMouseCoord(float mouseX, float mouseY);	//Установить текущие координаты мыши
+	/************************************************************************/
+
+	/************************************************************************/
+	/* Взаимодействие с "Видом"                                             */
+	void SetViewer(GameModel* gViewer);	//Установить Viewer
+	/************************************************************************/
+
+
 protected:
 
 private:
+	GameViewer *gameViewer;
+
+
 	IdGenerator *generatorId;	//Генератор Id для объектов
 	std::vector<GameObject_Player> players;	//Игроки
 

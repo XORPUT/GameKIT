@@ -15,19 +15,17 @@
 class MultiClassTunnel
 {
 public:
-	MultiClassTunnel(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork);
+	MultiClassTunnel(GameSetting *gSetting, GameModel *gModel, GameViewer *gViewer, GameControl *gControl, GameNetwork *gNetwork);
 	~MultiClassTunnel();
 	
-	void Init(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork);	//Инициализация шлюза
+	void Init(GameSetting *gSetting, GameModel *gModel, GameViewer *gViewer, GameControl *gControl, GameNetwork *gNetwork);	//Инициализация шлюза
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 
 private:
 	GameSetting *gameSetting;	//Базовый блок "Конфигурация игры"
 	GameModel *gameModel;		//Базовый блок "Модель"
-	/*	Раскомментить когда будут созданы классы
-	GameViewer *gameViewer;
-	*/
+	GameViewer *gameViewer;		//Базовый блок "Вид"
 	GameControl *gameControl;	//Базовый блок "Контроль"
 	GameNetwork *gameNetwork;	//Базовый блок "Сеть"
 };

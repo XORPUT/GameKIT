@@ -21,9 +21,9 @@ void Game::initGame()
 	gameSetting = new GameSetting();
 	gameModel = new GameModel();
 	gameControl = new GameControl(gameEngine);
-	//Расскомментить когда появится класс //        gameViewer = new GameViewer();
+	gameViewer = new GameViewer(gameEngine);
 	gameNetwork = new GameNetwork();
-	multiClassTunnel = new MultiClassTunnel(gameSetting, gameModel, gameControl, gameNetwork);
+	multiClassTunnel = new MultiClassTunnel(gameSetting, gameModel, gameViewer, gameControl, gameNetwork);
 	
 	//инициализация движка
 	game->initEngine();

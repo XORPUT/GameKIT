@@ -1,9 +1,9 @@
 #include "MultiClassTunnel.h"
 
 
-MultiClassTunnel::MultiClassTunnel(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork)
+MultiClassTunnel::MultiClassTunnel(GameSetting *gSetting, GameModel *gModel, GameViewer *gViewer, GameControl *gControl, GameNetwork *gNetwork)
 {
-	Init(gSetting, gModel, gControl, gNetwork);
+	Init(gSetting, gModel, gViewer, gControl, gNetwork);
 };
 
 MultiClassTunnel::~MultiClassTunnel()
@@ -11,18 +11,20 @@ MultiClassTunnel::~MultiClassTunnel()
 
 };
 
-void MultiClassTunnel::Init(GameSetting *gSetting, GameModel *gModel, GameControl *gControl, GameNetwork *gNetwork)
+void MultiClassTunnel::Init(GameSetting *gSetting, GameModel *gModel, GameViewer *gViewer, GameControl *gControl, GameNetwork *gNetwork)
 {
 	gameSetting = gSetting;
 
-	gameModel = gModel;
 
+	gameViewer = gViewer;
+	
+	gameModel = gModel;
+	gameModel->SetViewer(gViewer);
+	
 	gameControl = gControl;
-	gameControl->SetModel(gameModel);
+	gameControl->SetModel(gModel);
 
 	gameNetwork = gameNetwork;
-
-	//gameViewer = gViewer;
 };
 
 bool MultiClassTunnel::FrameFunc()
