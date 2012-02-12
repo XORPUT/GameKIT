@@ -37,7 +37,7 @@ public:
 	void SetViewer(GameViewer* gViewer);	//Установить Viewer
 	/************************************************************************/
 
-	void paintMouse();	//Указывает Виду нарисовать мышь
+	void paintSendListObject(std::vector<GameObject> sendList);	//Отправка на отрисовку списока объектов
 
 protected:
 
@@ -48,6 +48,7 @@ private:
 	IdGenerator *generatorId;	//Генератор Id для объектов
 	std::vector<GameObject_Player> players;	//Игроки
 
+	std::vector<GameObject> *sendListObject;	//Список объектов для отправки
 	GameObject *mouse;	//Мышка игрока
 };
 

@@ -3,6 +3,7 @@
 GameModel::GameModel()
 {
 	generatorId = new IdGenerator();
+	sendListObject = new std::vector<GameObject>();
 };
 
 GameModel::~GameModel()
@@ -31,15 +32,7 @@ bool GameModel::FrameFunc()
 
 void GameModel::setMouseCoord(float mouseX, float mouseY)
 {
-	mouse = new GameObject();
-	Point mouseCoord;
-	mouseCoord.x = mouseX;
-	mouseCoord.y = mouseY;
-	mouse->setCoord(mouseCoord);
-	mouse->setId(generatorId->GenerateId());
-	mouse->setTexture("mouse.png");
-	paintMouse();
-	generatorId->FreeId(mouse->getId());
+	paintSendListObject();
 };
 
 void GameModel::SetViewer(GameViewer* gViewer)
@@ -47,7 +40,15 @@ void GameModel::SetViewer(GameViewer* gViewer)
 	this->gameViewer = gViewer;
 };
 
-void GameModel::paintMouse()
+void GameModel::paintSendListObject(std::vector<GameObject> sendList)
 {
-	gameViewer->PaintObjMouse(mouse);
+	GameObject *a = new GameObject();
+	Point coord;
+	coord.x = 50;
+	coord.y = 50;
+
+	a->setId(0);
+	a->setCoord(coord);
+
+	gameViewer->PushDataObj(sendList);
 };
