@@ -37,7 +37,7 @@ public:
 	void SetViewer(GameViewer* gViewer);	//Установить Viewer
 	/************************************************************************/
 
-	void paintMouse(float x, float y);	//Указывает Виду нарисовать мышь
+	void paintMouse();	//Указывает Виду нарисовать мышь
 
 protected:
 
