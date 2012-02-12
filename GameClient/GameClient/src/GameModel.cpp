@@ -26,13 +26,14 @@ void GameModel::deletePlayer(GameObject_Player *player)
 
 bool GameModel::FrameFunc()
 {
+	paintSendListObject(sendListObject);
 	return false;
 };
 
 
 void GameModel::setMouseCoord(float mouseX, float mouseY)
 {
-	paintSendListObject();
+	//paintSendListObject();
 };
 
 void GameModel::SetViewer(GameViewer* gViewer)
@@ -40,7 +41,7 @@ void GameModel::SetViewer(GameViewer* gViewer)
 	this->gameViewer = gViewer;
 };
 
-void GameModel::paintSendListObject(std::vector<GameObject> sendList)
+void GameModel::paintSendListObject(std::vector<GameObject> *sendList)
 {
 	GameObject *a = new GameObject();
 	Point coord;

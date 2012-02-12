@@ -37,7 +37,7 @@ public:
 	void SetViewer(GameViewer* gViewer);	//Установить Viewer
 	/************************************************************************/
 
-	void paintSendListObject(std::vector<GameObject> sendList);	//Отправка на отрисовку списока объектов
+	void paintSendListObject(std::vector<GameObject> *sendList);	//Отправка на отрисовку списока объектов
 
 protected:
 

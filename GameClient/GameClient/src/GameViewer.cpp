@@ -43,7 +43,7 @@ void GameViewer::PaintObj(GameObject *objId)
 
 }; 
 
-void GameViewer::PushDataObj(std::vector<GameObject> objId)
+void GameViewer::PushDataObj(std::vector<GameObject> *objId)
 {
 	
 };
