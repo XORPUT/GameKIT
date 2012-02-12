@@ -22,3 +22,8 @@ void GameModel::deletePlayer(GameObject_Player *player)
 	generatorId->FreeId( player->getId() );
 	delete player;
 };
+
+bool frameStarted()
+{
+	return false;
+};

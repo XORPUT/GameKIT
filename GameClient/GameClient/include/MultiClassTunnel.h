@@ -17,6 +17,7 @@ class MultiClassTunnel
 public:
 	MultiClassTunnel();
 	~MultiClassTunnel();
+	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 
 private:

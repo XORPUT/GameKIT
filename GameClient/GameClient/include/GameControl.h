@@ -11,7 +11,7 @@ class GameControl
 public:
 	GameControl();
 	~GameControl();
-
+	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 protected:
 
 private:

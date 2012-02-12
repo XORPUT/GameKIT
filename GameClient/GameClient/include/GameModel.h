@@ -18,8 +18,10 @@ class GameModel
 public:
 	GameModel();
 	~GameModel();
+	
 	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
+	bool frameStarted();	//Вызывается когда начинается новый frame(кадр)
 protected:
 
 private:

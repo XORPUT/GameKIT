@@ -11,7 +11,19 @@ Game *game = new Game();
 //Помогает прикрепить функцию обновления кадра к классу
 bool MyFrameFuncHelper() {
 	return game->FrameFunc();
-}
+};
+
+void Game::initGame()
+{
+	game->initEngine();
+
+	gameSetting = new GameSetting();
+	gameModel = new GameModel();
+	gameControl = new GameControl();
+	//Расскомментить когда появится класс //        gameViewer = new GameViewer();
+	gameNetwork = new GameNetwork();
+	multiClassTunnel = new MultiClassTunnel();
+};
 
 void Game::initEngine()
 {
@@ -51,10 +63,14 @@ bool Game::FrameFunc()
 };
 
 
+
+/*
+	Функция запускающая программу
+*/
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	//Инициализирую игру
-	game->initEngine();
+	game->initGame();
 
 	return 0;
 };
