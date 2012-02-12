@@ -35,7 +35,7 @@ void GameModel::setMouseCoord(float mouseX, float mouseY)
 	mouseCoordY = mouseY;
 };
 
-void GameModel::SetViewer(GameModel* gViewer)
+void GameModel::SetViewer(GameViewer* gViewer)
 {
 	this->gameViewer = gViewer;
 };

@@ -32,7 +32,7 @@ private:
 
 	GameSetting *gameSetting;	//Базовый блок "Конфигурация игры"
 	GameModel *gameModel;		//Базовый блок "Модель"
-	//Раскомменить когда будет написан класс//			GameViewer *gameViewer;		//Базовый блок "Вид"
+	GameViewer *gameViewer;		//Базовый блок "Вид"
 	GameControl *gameControl;	//Базовый блок "Контроль"
 	GameNetwork *gameNetwork;	//Базовый блок "Сеть"
 	MultiClassTunnel *multiClassTunnel;		//Межклассовый шлюз
