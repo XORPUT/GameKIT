@@ -36,7 +36,7 @@ void Game::initEngine()
 	else
 	{	
 		//Ошибка инициализации
-		MessageBox(0, (LPCTSTR)gameEngine->System_GetErrorMessage(), "Error", MB_OK | MB_ICONERROR | MB_APPLMODAL);
+		MessageBox(0, gameEngine->System_GetErrorMessage(), "Error", MB_OK | MB_ICONERROR | MB_APPLMODAL);
 	}
 
 
