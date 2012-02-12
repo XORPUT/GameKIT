@@ -10,9 +10,15 @@ GameModel::~GameModel()
 
 };
 
-int GameModel::AddPlayer()
+int GameModel::addPlayer()
 {
 	GameObject_Player *newPlayer = new GameObject_Player();
-	//ÄÎÏÈÑÀÒÜ ÔÓÍÊÖÈÞ!!!!!!!!!!!!!!!!!!!!!!!!!
+	newPlayer->setId( generatorId->GenerateId() );
 	return newPlayer->getId();
+};
+
+void GameModel::deletePlayer(GameObject_Player *player)
+{
+	generatorId->FreeId( player->getId() );
+	delete player;
 };
