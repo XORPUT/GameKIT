@@ -1,4 +1,0 @@
-#ifndef GAMEGRAPHINTERFACE_H
-#define GAMEGRAPHINTERFACE_H
-
-#endif

@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Viewer">
       <UniqueIdentifier>{b488b6bb-2120-445d-8de5-47420b16eb68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Control">
+      <UniqueIdentifier>{24ec0cb5-b472-48e4-ad14-cf389bd3d133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control">
+      <UniqueIdentifier>{02f35429-0ee3-4101-a4b5-c0951147110c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameViewer.cpp">
@@ -37,9 +43,6 @@
       <Filter>Source Files\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="src\GameComputing.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameControl.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="src\GameGraphInterface.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameControl.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -75,12 +81,6 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameNetworkInterface.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameControl.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameGraphInterface.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameComputing.h">
@@ -99,6 +99,12 @@
       <Filter>Header Files\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="include\GameObject_Player.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameControl.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Tunnel_Model_to_Viewer.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
