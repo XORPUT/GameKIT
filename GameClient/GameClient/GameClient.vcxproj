@@ -82,9 +82,9 @@
     <ClCompile Include="src\GameComputing.cpp" />
     <ClCompile Include="src\GameControl.cpp" />
     <ClCompile Include="src\GameGetDataObj.cpp" />
-    <ClCompile Include="src\GameGraphInterface.cpp" />
+    <ClCompile Include="src\MultiClassTunnel.cpp" />
     <ClCompile Include="src\GameModel.cpp" />
-    <ClCompile Include="src\GameNetworkInterface.cpp" />
+    <ClCompile Include="src\GameNetwork.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\GameObject_Player.cpp" />
     <ClCompile Include="src\GamePaintObj.cpp" />
@@ -96,8 +96,8 @@
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameControl.h" />
     <ClInclude Include="include\GameGetDataObj.h" />
-    <ClInclude Include="include\Tunnel_Model_to_Viewer.h" />
-    <ClInclude Include="include\GameNetworkInterface.h" />
+    <ClInclude Include="include\MultiClassTunnel.h" />
+    <ClInclude Include="include\GameNetwork.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GameModel.h" />
     <ClInclude Include="include\GameObject_Player.h" />

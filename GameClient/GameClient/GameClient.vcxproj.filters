@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Control">
       <UniqueIdentifier>{02f35429-0ee3-4101-a4b5-c0951147110c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Network">
+      <UniqueIdentifier>{c21c7a1a-579e-4632-aa2d-c5587e05fe3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network">
+      <UniqueIdentifier>{9aa60c15-38a3-450e-9dc7-b65998858ae8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameViewer.cpp">
@@ -45,13 +51,7 @@
     <ClCompile Include="src\GameComputing.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameGraphInterface.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameModel.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameNetworkInterface.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObject.cpp">
@@ -69,6 +69,12 @@
     <ClCompile Include="src\GameControl.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
+    <ClCompile Include="src\MultiClassTunnel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameNetwork.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -78,9 +84,6 @@
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameModel.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameNetworkInterface.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
     <ClInclude Include="include\GameComputing.h">
@@ -104,8 +107,11 @@
     <ClInclude Include="include\GameControl.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
-    <ClInclude Include="include\Tunnel_Model_to_Viewer.h">
-      <Filter>Header Files\Model</Filter>
+    <ClInclude Include="include\MultiClassTunnel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameNetwork.h">
+      <Filter>Header Files\Network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
