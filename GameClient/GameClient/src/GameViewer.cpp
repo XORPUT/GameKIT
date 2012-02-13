@@ -52,7 +52,7 @@ void GameViewer::PaintListObject()
 {
 	for (int i=0; i<=arrayObjects->size(); i++)
 	{
-		PaintObj(arrayObjects[i]);
+		PaintObj(&arrayObjects->at(i));
 	}
 };
 
