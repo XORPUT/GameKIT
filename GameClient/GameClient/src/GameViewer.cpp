@@ -33,14 +33,10 @@ void GameViewer::PaintObj(GameObject *obj)
 	hgeSprite *spr;
 	spr = new hgeSprite(textureObject,0,0,(float)gameEngine->Texture_GetWidth(textureObject, true),(float)gameEngine->Texture_GetHeight(textureObject, true));
 
-	gameEngine->Gfx_Clear(0);
-
-	gameEngine->Gfx_BeginScene();
-
-	//spr->RenderEx(pObjects.x, pObjects.y, pObjects.rot, pObjects.scale);
-
-	gameEngine->Gfx_EndScene();
-
+	spr->RenderEx(pObjects.x, pObjects.y, pObjects.rot, pObjects.scale);
+	
+	delete spr;
+	gameEngine->Texture_Free(textureObject);
 }; 
 
 void GameViewer::PushDataObj(std::vector<GameObject> *listOfObject)
@@ -50,10 +46,14 @@ void GameViewer::PushDataObj(std::vector<GameObject> *listOfObject)
 
 void GameViewer::PaintListObject()
 {
-	for (unsigned int i=0; i<=arrayObjects->size(); i++)
+	gameEngine->Gfx_BeginScene();
+
+	for (unsigned int i=0; i<arrayObjects->size(); i++)
 	{
 		PaintObj(&arrayObjects->at(i));
 	}
+
+	gameEngine->Gfx_EndScene();
 };
 
 bool GameViewer::FrameFunc()

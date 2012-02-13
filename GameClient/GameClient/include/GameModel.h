@@ -20,13 +20,14 @@ public:
 	GameModel();
 	~GameModel();
 	
-	
+	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
+	void injectSendListObjectToViewer();	//Передаёт указатель на список объектов для отрисовки Вьюверу
 	
 	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
 	int addMob();	//Добавляет моба, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
 	void deleteMob(GameObject_Mob *mob);	//Удаляет моба
-	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
+	void GenerateSendListObjects();
 
 
 	/************************************************************************/

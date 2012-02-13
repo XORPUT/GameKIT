@@ -19,9 +19,9 @@ void Game::initGame()
 	gameEngine = hgeCreate(HGE_VERSION);
 
 	gameSetting = new GameSetting();
+	gameViewer = new GameViewer(gameEngine);
 	gameModel = new GameModel();
 	gameControl = new GameControl(gameEngine);
-	gameViewer = new GameViewer(gameEngine);
 	gameNetwork = new GameNetwork();
 	multiClassTunnel = new MultiClassTunnel(gameSetting, gameModel, gameViewer, gameControl, gameNetwork);
 	
@@ -43,6 +43,9 @@ void Game::initEngine()
 	//Прикрепление к движку функции обновления каждра
 	gameEngine->System_SetState(HGE_FRAMEFUNC, &MyFrameFuncHelper);
 
+	//Ограничение FPS
+	gameEngine->System_SetState(HGE_FPS, 50);
+
 	//Установка заголовка окна по-умолчанию
 	gameEngine->System_SetState(HGE_TITLE, "Game");
 	
@@ -50,7 +53,7 @@ void Game::initEngine()
 	gameEngine->System_SetState(HGE_WINDOWED, true);
 
 	//Устанавливаю режим использования звука библиотеки BASS.dll
-	gameEngine->System_SetState(HGE_USESOUND, true);
+	gameEngine->System_SetState(HGE_USESOUND, false);
 
 	if(gameEngine->System_Initiate())
 	{

@@ -42,8 +42,65 @@ void GameModel::deleteMob(GameObject_Mob *mob)
 	delete mob;
 };
 
+void GameModel::GenerateSendListObjects()
+{
+	sendListObject->clear();
+	//sendListObject->push_back(players);
+	//sendListObject->push_back(mobs);
+
+
+	//****************ÁËÎÊ ÄËß ÒÅÑÒÀ. ÓÄÀËÈÒÜ!!!!!!!!!!!
+	/*
+	GameObject *fon = new GameObject();
+	fon->setId( generatorId->GenerateId() );
+	Point p;
+	p.x = 0;
+	p.y = 0;
+	fon->setCoord(p);
+	fon->setTexture("fon.jpg");
+
+	sendListObject->push_back(*fon);
+	delete fon;
+
+	GameObject *player = new GameObject();
+	player->setId( generatorId->GenerateId() );
+	Point p2;
+	p2.x = 50;
+	p2.y = 50;
+	player->setCoord(p2);
+	player->setTexture("player.png");
+
+	sendListObject->push_back(*player);
+	delete player;
+	
+	GameObject *mob = new GameObject();
+	mob->setId( generatorId->GenerateId() );
+	Point p4;
+	p4.x = 100;
+	p4.y = 100;
+	mob->setCoord(p4);
+	mob->setTexture("zombie.png");
+
+	sendListObject->push_back(*mob);
+	delete mob;
+	
+	GameObject *cursor = new GameObject();
+	cursor->setId( generatorId->GenerateId() );
+	Point p3;
+	p3 = mouse.getCoord();
+	
+	cursor->setCoord(p3);
+	cursor->setTexture("cursor.png");
+
+	sendListObject->push_back(*cursor);
+	delete cursor;
+	*/
+};
+
 bool GameModel::FrameFunc()
 {
+	injectSendListObjectToViewer();
+	GenerateSendListObjects();
 	return false;
 };
 
@@ -61,7 +118,7 @@ void GameModel::SetViewer(GameViewer* gViewer)
 	this->gameViewer = gViewer;
 };
 
-void GameModel::paintSendListObject(std::vector<GameObject> *sendList)
+void GameModel::injectSendListObjectToViewer()
 {
-	gameViewer->PushDataObj(sendList);
+	gameViewer->PushDataObj(sendListObject);
 };
