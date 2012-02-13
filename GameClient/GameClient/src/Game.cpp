@@ -50,7 +50,7 @@ void Game::initEngine()
 	gameEngine->System_SetState(HGE_TITLE, "Game");
 	
 	//Устанавливаю полноэкранный режим
-	gameEngine->System_SetState(HGE_WINDOWED, false);
+	gameEngine->System_SetState(HGE_WINDOWED, true);
 
 	//Устанавливаю режим использования звука библиотеки BASS.dll
 	gameEngine->System_SetState(HGE_USESOUND, false);
