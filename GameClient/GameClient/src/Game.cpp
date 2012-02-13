@@ -44,13 +44,13 @@ void Game::initEngine()
 	gameEngine->System_SetState(HGE_FRAMEFUNC, &MyFrameFuncHelper);
 
 	//Ограничение FPS
-	gameEngine->System_SetState(HGE_FPS, 50);
+	hge->System_SetState(HGE_FPS, 100);
 
 	//Установка заголовка окна по-умолчанию
 	gameEngine->System_SetState(HGE_TITLE, "Game");
 	
 	//Устанавливаю полноэкранный режим
-	gameEngine->System_SetState(HGE_WINDOWED, true);
+	gameEngine->System_SetState(HGE_WINDOWED, false);
 
 	//Устанавливаю режим использования звука библиотеки BASS.dll
 	gameEngine->System_SetState(HGE_USESOUND, false);
