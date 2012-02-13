@@ -23,7 +23,9 @@ public:
 	
 	
 	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
+	int addMob();	//Добавляет моба, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
+	void deleteMob(GameObject_Mob *mob);	//Удаляет моба
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 
 
@@ -35,21 +37,20 @@ public:
 	/************************************************************************/
 	/* Взаимодействие с "Видом"                                             */
 	void SetViewer(GameViewer* gViewer);	//Установить Viewer
-	/************************************************************************/
-
 	void paintSendListObject(std::vector<GameObject> *sendList);	//Отправка на отрисовку списока объектов
+	/************************************************************************/
 
 protected:
 
 private:
 	GameViewer *gameViewer;
 
-
 	IdGenerator *generatorId;	//Генератор Id для объектов
-	std::vector<GameObject_Player> players;	//Игроки
-
+	std::vector<GameObject_Player> *players;	//Список игроков
+	std::vector<GameObject_Mob> *mobs;	//Список мобов
 	std::vector<GameObject> *sendListObject;	//Список объектов для отправки
-	GameObject *mouse;	//Мышка игрока
+
+	GameObject mouse;	//Мышка игрока
 };
 
 

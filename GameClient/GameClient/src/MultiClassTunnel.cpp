@@ -31,7 +31,7 @@ bool MultiClassTunnel::FrameFunc()
 {
 	gameControl->FrameFunc();
 	gameModel->FrameFunc();
-//	gameViewer->FrameFunc();
+	gameViewer->FrameFunc();
 
 	return false;
 };
