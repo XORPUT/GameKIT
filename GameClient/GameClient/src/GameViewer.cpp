@@ -14,10 +14,10 @@ void GameViewer::PaintObj(GameObject *obj)
 {
 	 
 	// Загрузка текстуры
-	HTEXTURE mouseTexture = gameEngine->Texture_Load(obj->getTexture().c_str());
+	HTEXTURE Texture = gameEngine->Texture_Load(obj->getTexture().c_str());
 
 	// Загрузило ли?
-	if(!mouseTexture)
+	if(!Texture)
 	{
 			gameEngine->System_Shutdown();
 			gameEngine->Release();
@@ -31,7 +31,7 @@ void GameViewer::PaintObj(GameObject *obj)
 	pObjects.rot = 0;
 
 	hgeSprite *spr;
-	spr = new hgeSprite(mouseTexture,0,0,32,32);
+	spr = new hgeSprite(Texture,0,0,32,32);
 
 	gameEngine->Gfx_Clear(0);
 
@@ -50,7 +50,7 @@ void GameViewer::PushDataObj(std::vector<GameObject> *listOfObject)
 
 void GameViewer::PaintListObject()
 {
-	for (int i=0; i<=arrayObjects->size(); i++)
+	for (unsigned int i=0; i<=arrayObjects->size(); i++)
 	{
 		PaintObj(&arrayObjects->at(i));
 	}
