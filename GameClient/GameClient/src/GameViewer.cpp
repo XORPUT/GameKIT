@@ -58,5 +58,6 @@ void GameViewer::PaintListObject()
 
 bool GameViewer::FrameFunc()
 {
+	PaintListObject();
 	return false;
 };
