@@ -14,10 +14,10 @@ void GameViewer::PaintObj(GameObject *obj)
 {
 	 
 	// Загрузка текстуры
-	HTEXTURE Texture = gameEngine->Texture_Load(obj->getTexture().c_str());
+	HTEXTURE textureObject = gameEngine->Texture_Load(obj->getTexture().c_str());
 
 	// Загрузило ли?
-	if(!Texture)
+	if(!textureObject)
 	{
 			gameEngine->System_Shutdown();
 			gameEngine->Release();
@@ -31,7 +31,7 @@ void GameViewer::PaintObj(GameObject *obj)
 	pObjects.rot = 0;
 
 	hgeSprite *spr;
-	spr = new hgeSprite(Texture,0,0,32,32);
+	spr = new hgeSprite(textureObject,0,0,(float)gameEngine->Texture_GetWidth(textureObject, true),(float)gameEngine->Texture_GetHeight(textureObject, true));
 
 	gameEngine->Gfx_Clear(0);
 
