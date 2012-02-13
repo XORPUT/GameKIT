@@ -50,7 +50,7 @@ void GameModel::GenerateSendListObjects()
 
 
 	//****************ÁËÎÊ ÄËß ÒÅÑÒÀ. ÓÄÀËÈÒÜ!!!!!!!!!!!
-	/*
+	
 	GameObject *fon = new GameObject();
 	fon->setId( generatorId->GenerateId() );
 	Point p;
@@ -94,7 +94,7 @@ void GameModel::GenerateSendListObjects()
 
 	sendListObject->push_back(*cursor);
 	delete cursor;
-	*/
+	
 };
 
 bool GameModel::FrameFunc()
