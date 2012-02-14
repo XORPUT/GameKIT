@@ -44,7 +44,8 @@ void Game::initEngine()
 	gameEngine->System_SetState(HGE_FRAMEFUNC, &MyFrameFuncHelper);
 
 	//Ограничение FPS
-	hge->System_SetState(HGE_FPS, 100);
+	//gameEngine->System_SetState(HGE_FPS, 100);
+	gameEngine->System_SetState(HGE_FPS, HGEFPS_VSYNC);
 
 	//Установка заголовка окна по-умолчанию
 	gameEngine->System_SetState(HGE_TITLE, "Game");
@@ -79,6 +80,8 @@ void Game::releaseEngine()
 bool Game::FrameFunc()
 {
 	multiClassTunnel->FrameFunc();
+	gameEngine->Timer_GetDelta();
+	int fps = gameEngine->Timer_GetFPS();
 	return false;
 };
 
