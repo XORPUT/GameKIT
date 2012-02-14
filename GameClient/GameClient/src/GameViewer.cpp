@@ -47,10 +47,13 @@ void GameViewer::PushDataObj(std::vector<GameObject> *listOfObject)
 void GameViewer::PaintListObject()
 {
 	gameEngine->Gfx_BeginScene();
+	gameEngine->Gfx_Clear(0);
 
-	for (unsigned int i=0; i<arrayObjects->size(); i++)
+	std::vector<GameObject>::iterator it;
+	for (it = arrayObjects->begin(); it != arrayObjects->end(); it++)
 	{
-		PaintObj(&arrayObjects->at(i));
+		GameObject temp = *it;
+		PaintObj( &*it ); //Бред, но ток так и работает...
 	}
 
 	gameEngine->Gfx_EndScene();
