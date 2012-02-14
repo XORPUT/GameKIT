@@ -10,7 +10,7 @@
 	Класс - "Игрок"
 */
 
-class GameObject_Player : public GameObject_Mob
+class GameObject_Player : public GameObject
 {
 public:
 

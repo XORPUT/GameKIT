@@ -45,7 +45,7 @@ void Game::initEngine()
 
 	//Ограничение FPS
 	//gameEngine->System_SetState(HGE_FPS, 100);
-	gameEngine->System_SetState(HGE_FPS, HGEFPS_VSYNC);
+	gameEngine->System_SetState(HGE_FPS, 60);
 
 	//Установка заголовка окна по-умолчанию
 	gameEngine->System_SetState(HGE_TITLE, "Game");
@@ -55,6 +55,8 @@ void Game::initEngine()
 
 	//Устанавливаю режим использования звука библиотеки BASS.dll
 	gameEngine->System_SetState(HGE_USESOUND, false);
+
+	gameEngine->System_SetState(HGE_SCREENBPP, 32);
 
 	if(gameEngine->System_Initiate())
 	{
@@ -79,9 +81,8 @@ void Game::releaseEngine()
 */
 bool Game::FrameFunc()
 {
+	Sleep(1);
 	multiClassTunnel->FrameFunc();
-	gameEngine->Timer_GetDelta();
-	int fps = gameEngine->Timer_GetFPS();
 	return false;
 };
 

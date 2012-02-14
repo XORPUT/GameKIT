@@ -12,7 +12,7 @@ class GameObject_Mob: public GameObject
 public:
 
 protected:
-	std::string name;	//Имя моба
+
 private:
 
 };

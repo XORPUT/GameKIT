@@ -2,38 +2,41 @@
 
 GameModel::GameModel()
 {
+	/* Инициализация генератора случайных чисел */
+	srand ( time(NULL) );
+
 	generatorId = new IdGenerator();
 	sendListObject = new std::vector<GameObject>();
-	players = new std::vector<GameObject_Player>();
 	mobs = new std::vector<GameObject_Mob>();
+
+	CreatePlayer(Point(150, 150), "admin.png");
 };
 
 GameModel::~GameModel()
 {
 	delete generatorId;
 	delete sendListObject;
-	delete players;
 	delete mobs;
 };
 
-int GameModel::addPlayer()
+int GameModel::CreatePlayer(Point coordPlayer, std::string texturePlayer)
 {
-	GameObject_Player *newPlayer = new GameObject_Player();
-	newPlayer->setId( generatorId->GenerateId() );
-	return newPlayer->getId();
+	player.setId( generatorId->GenerateId() );
+	player.setCoord(coordPlayer);
+	player.setTexture(texturePlayer);
+
+	return player.getId();
 };
 
-int GameModel::addMob()
+int GameModel::addMob(Point coordMob, std::string textureMob)
 {
 	GameObject_Mob *newMob = new GameObject_Mob();
 	newMob->setId( generatorId->GenerateId() );
-	return newMob->getId();
-};
+	newMob->setCoord(coordMob);
+	newMob->setTexture(textureMob);
+	mobs->push_back(*newMob);
 
-void GameModel::deletePlayer(GameObject_Player *player)
-{
-	generatorId->FreeId( player->getId() );
-	delete player;
+	return newMob->getId();
 };
 
 void GameModel::deleteMob(GameObject_Mob *mob)
@@ -45,60 +48,37 @@ void GameModel::deleteMob(GameObject_Mob *mob)
 void GameModel::GenerateSendListObjects()
 {
 	sendListObject->clear();
-	//sendListObject->push_back(players);
-	//sendListObject->push_back(mobs);
 
+	//Добавляю игрока
+	sendListObject->push_back(player);
 
-	//****************БЛОК ДЛЯ ТЕСТА. УДАЛИТЬ!!!!!!!!!!!
-	
-	GameObject *fon = new GameObject();
-	fon->setId( generatorId->GenerateId() );
-	Point p;
-	p.x = 0;
-	p.y = 0;
-	fon->setCoord(p);
-	fon->setTexture("fon.jpg");
-
-	sendListObject->push_back(*fon);
-	delete fon;
-
-	GameObject *player = new GameObject();
-	player->setId( generatorId->GenerateId() );
-	Point p2;
-	p2.x = 50;
-	p2.y = 50;
-	player->setCoord(p2);
-	player->setTexture("player.png");
-
-	sendListObject->push_back(*player);
-	delete player;
-	
-	GameObject *mob = new GameObject();
-	mob->setId( generatorId->GenerateId() );
-	Point p4;
-	p4.x = 100;
-	p4.y = 100;
-	mob->setCoord(p4);
-	mob->setTexture("zombie.png");
-
-	sendListObject->push_back(*mob);
-	delete mob;
-	
-	GameObject *cursor = new GameObject();
-	cursor->setId( generatorId->GenerateId() );
-	Point p3;
-	p3 = mouse.getCoord();
-	
-	cursor->setCoord(p3);
-	cursor->setTexture("cursor.png");
-
-	sendListObject->push_back(*cursor);
-	delete cursor;
+	//Добавляю всех мобов
+	std::vector<GameObject_Mob>::iterator it;
+	for (it = mobs->begin(); it != mobs->end(); it++)
+	{
+		sendListObject->push_back( *it );
+	}	
 	
 };
 
 bool GameModel::FrameFunc()
 {
+	if (std::rand() % 200 + 1 == 20)
+	{
+		addMob(Point((float)(std::rand() % 200 + 1) ,(float)(std::rand() % 200 + 1)), "zombie.png");
+	}
+
+	std::vector<GameObject_Mob>::iterator it;
+	for (it = mobs->begin(); it != mobs->end(); it++)
+	{
+		it->setCoord( Point( 
+			it->getCoord().x - ((it->getCoord().x - player.getCoord().x) / 200), 
+			it->getCoord().y - ((it->getCoord().y - player.getCoord().y) / 200)  
+			) );
+	}	
+
+	player.setCoord(mouse.getCoord());
+
 	injectSendListObjectToViewer();
 	GenerateSendListObjects();
 	return false;

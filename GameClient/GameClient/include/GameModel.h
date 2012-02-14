@@ -2,6 +2,9 @@
 #define GAMEMODEL_H
 
 #include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "GameViewer.h"
 #include "GameObject.h"
@@ -23,8 +26,8 @@ public:
 	bool FrameFunc();	//Функция которая запускается движком при обновлении кадра
 	void injectSendListObjectToViewer();	//Передаёт указатель на список объектов для отрисовки Вьюверу
 	
-	int addPlayer();	//Добавляет игрока, возвращает его идентификатор
-	int addMob();	//Добавляет моба, возвращает его идентификатор
+	int CreatePlayer(Point coordPlayer, std::string texturePlayer);	//Создаёт игрока, возвращает его идентификатор
+	int addMob(Point coordMob, std::string textureMob);	//Добавляет моба, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
 	void deleteMob(GameObject_Mob *mob);	//Удаляет моба
 	void GenerateSendListObjects();
@@ -47,10 +50,10 @@ private:
 	GameViewer *gameViewer;
 
 	IdGenerator *generatorId;	//Генератор Id для объектов
-	std::vector<GameObject_Player> *players;	//Список игроков
 	std::vector<GameObject_Mob> *mobs;	//Список мобов
 	std::vector<GameObject> *sendListObject;	//Список объектов для отправки
 
+	GameObject_Player player;	//Игрок
 	GameObject mouse;	//Мышка игрока
 };
 
