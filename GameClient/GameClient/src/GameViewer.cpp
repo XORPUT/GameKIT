@@ -52,7 +52,6 @@ void GameViewer::PaintListObject()
 	std::vector<GameObject>::iterator it;
 	for (it = arrayObjects->begin(); it != arrayObjects->end(); it++)
 	{
-		GameObject temp = *it;
 		PaintObj( &*it ); //Бред, но ток так и работает...
 	}
 
