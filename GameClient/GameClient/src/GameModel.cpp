@@ -63,9 +63,9 @@ void GameModel::GenerateSendListObjects()
 
 bool GameModel::FrameFunc()
 {
-	if (std::rand() % 200 + 1 == 20)
+	if (std::rand() % 50 + 1 == 1)
 	{
-		addMob(Point((float)(std::rand() % 200 + 1) ,(float)(std::rand() % 200 + 1)), "zombie.png");
+		addMob(Point((float)(std::rand() % 600 + 1) ,(float)(std::rand() % 600 + 1)), "zombie.png");
 	}
 
 	std::vector<GameObject_Mob>::iterator it;
