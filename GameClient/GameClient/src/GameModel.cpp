@@ -109,8 +109,8 @@ bool GameModel::FrameFunc()
 
 		if (it->getType() == "mob_zombie")
 		{
-			it->setCoord(Point( it->getCoord().x - ((it->getCoord().x - player.getCoord().x) / (std::rand() % 400 + 200)), 
-								it->getCoord().y - ((it->getCoord().y - player.getCoord().y) / (std::rand() % 400 + 200)))
+			it->setCoord(Point( it->getCoord().x - ((it->getCoord().x - player.getCoord().x) / (std::rand() % 420 + 180)), 
+								it->getCoord().y - ((it->getCoord().y - player.getCoord().y) / (std::rand() % 420 + 180)))
 						);
 		} else
 		if (it->getType() == "mob_zombie_noob")
