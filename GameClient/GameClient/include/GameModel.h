@@ -27,7 +27,7 @@ public:
 	void injectSendListObjectToViewer();	//Передаёт указатель на список объектов для отрисовки Вьюверу
 	
 	int CreatePlayer(Point coordPlayer, std::string texturePlayer);	//Создаёт игрока, возвращает его идентификатор
-	int addMob(Point coordMob, std::string textureMob);	//Добавляет моба, возвращает его идентификатор
+	int addMob(std::string typeMob, Point coordMob, std::string textureMob);	//Добавляет моба, возвращает его идентификатор
 	void deletePlayer(GameObject_Player *player);	//Удаляет игрока
 	void deleteMob(GameObject_Mob *mob);	//Удаляет моба
 	void GenerateSendListObjects();

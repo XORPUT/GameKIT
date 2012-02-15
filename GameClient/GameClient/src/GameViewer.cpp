@@ -3,6 +3,32 @@
 GameViewer::GameViewer(HGE *gEngine)
 {	
 	SetGameEngine(gEngine);
+	arrayLoadedTextures = new std::vector<TexturePack>();
+};
+
+GameViewer::~GameViewer()
+{	
+	delete arrayLoadedTextures;
+};
+
+HTEXTURE GameViewer::LoadTexture(std::string textureName)
+{
+	
+	std::vector<TexturePack>::iterator it;
+	for (it = arrayLoadedTextures->begin(); it != arrayLoadedTextures->end(); it++)
+	{
+		//Если текстура уже загружалась
+		if (it->nameTexture == textureName)
+		{
+			return it->texture;
+		}
+	}
+	
+	// Загрузка текстуры
+	HTEXTURE textureObject = gameEngine->Texture_Load(textureName.c_str());
+
+	arrayLoadedTextures->push_back( TexturePack(textureName, textureObject) );
+	return textureObject;
 };
 
 void GameViewer::SetGameEngine(HGE *gEngine)
@@ -12,11 +38,8 @@ void GameViewer::SetGameEngine(HGE *gEngine)
 
 void GameViewer::PaintObj(GameObject *obj)
 {
-	 
+	HTEXTURE textureObject = LoadTexture(obj->getTexture());
 	// Загрузка текстуры
-	HTEXTURE textureObject = gameEngine->Texture_Load(obj->getTexture().c_str());
-
-	// Загрузило ли?
 	if(!textureObject)
 	{
 			gameEngine->System_Shutdown();
@@ -36,7 +59,7 @@ void GameViewer::PaintObj(GameObject *obj)
 	spr->RenderEx(pObjects.x, pObjects.y, pObjects.rot, pObjects.scale);
 	
 	delete spr;
-	gameEngine->Texture_Free(textureObject);
+	//gameEngine->Texture_Free(textureObject);
 }; 
 
 void GameViewer::PushDataObj(std::vector<GameObject> *listOfObject)
@@ -48,6 +71,8 @@ void GameViewer::PaintListObject()
 {
 	gameEngine->Gfx_BeginScene();
 	gameEngine->Gfx_Clear(0);
+	hgeFont *fnt = new hgeFont("font1.fnt");
+	fnt->printf(5, 5, HGETEXT_LEFT, "Zombies:%.3d\nFPS:%d", arrayObjects->size(), gameEngine->Timer_GetFPS());
 
 	std::vector<GameObject>::iterator it;
 	for (it = arrayObjects->begin(); it != arrayObjects->end(); it++)

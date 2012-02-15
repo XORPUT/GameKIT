@@ -20,6 +20,7 @@ public:
 	~GameViewer();
 
 	void SetGameEngine(HGE *gEngine); // Принятие указателя на движок
+	HTEXTURE LoadTexture(std::string textureName);
 	void PaintObj(GameObject *obj); // Отрисовка одного объекта
 	void PushDataObj(std::vector<GameObject> *listOfObject); // Получает список объектов для отрисовки
 	void PaintListObject(); // отрисовка листа объектов
@@ -29,6 +30,7 @@ protected:
 private:
 	HGE *gameEngine; // Указатель на игровой движок
 	std::vector<GameObject> *arrayObjects; // Массив объектов
+	std::vector<TexturePack> *arrayLoadedTextures;	//Массив загруженных текстур
 };
 
 #endif

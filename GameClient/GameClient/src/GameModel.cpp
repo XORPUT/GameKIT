@@ -28,10 +28,11 @@ int GameModel::CreatePlayer(Point coordPlayer, std::string texturePlayer)
 	return player.getId();
 };
 
-int GameModel::addMob(Point coordMob, std::string textureMob)
+int GameModel::addMob(std::string typeMob, Point coordMob, std::string textureMob)
 {
 	GameObject_Mob *newMob = new GameObject_Mob();
 	newMob->setId( generatorId->GenerateId() );
+	newMob->setType( typeMob );
 	newMob->setCoord(coordMob);
 	newMob->setTexture(textureMob);
 	mobs->push_back(*newMob);
@@ -42,7 +43,18 @@ int GameModel::addMob(Point coordMob, std::string textureMob)
 void GameModel::deleteMob(GameObject_Mob *mob)
 {
 	generatorId->FreeId( mob->getId() );
-	delete mob;
+	//Ищу нужного моба мобов
+	std::vector<GameObject_Mob>::iterator it;
+	for (it = mobs->begin(); it != mobs->end(); it++)
+	{
+		if (it->getId() == mob->getId())
+		{
+			mobs->erase(it);
+			break;
+		}
+	}	
+
+	//delete mob;
 };
 
 void GameModel::GenerateSendListObjects()
@@ -63,18 +75,38 @@ void GameModel::GenerateSendListObjects()
 
 bool GameModel::FrameFunc()
 {
-	if (std::rand() % 50 + 1 == 1)
+	if (std::rand() % 10 + 1 == 1)
 	{
-		addMob(Point((float)(std::rand() % 600 + 1) ,(float)(std::rand() % 600 + 1)), "zombie.png");
+		if (mobs->size()>200)
+		{
+			deleteMob(&mobs->at(0));
+			deleteMob(&mobs->at(0));
+		}
+		addMob("mob_zombie" ,Point((float)(std::rand() % 1000 - 200) ,(float)(std::rand() % 2 - 100)), "zombie.png");
+		addMob("mob_zombie", Point((float)(std::rand() % 1000 - 200) ,(float)(std::rand() % 2 + 600)), "zombie.png");
 	}
 
 	std::vector<GameObject_Mob>::iterator it;
 	for (it = mobs->begin(); it != mobs->end(); it++)
 	{
-		it->setCoord( Point( 
-			it->getCoord().x - ((it->getCoord().x - player.getCoord().x) / 200), 
-			it->getCoord().y - ((it->getCoord().y - player.getCoord().y) / 200)  
-			) );
+		if ( ( abs(it->getCoord().x - player.getCoord().x) < 60 ) && ( abs(it->getCoord().y - player.getCoord().y) < 60 ) )
+		{
+			it->setType("mob_zombie_noob");
+		}
+
+		if (it->getType() == "mob_zombie")
+		{
+			it->setCoord(Point( it->getCoord().x - ((it->getCoord().x - player.getCoord().x) / (std::rand() % 400 + 200)), 
+								it->getCoord().y - ((it->getCoord().y - player.getCoord().y) / (std::rand() % 400 + 200)))
+						);
+		} else
+		if (it->getType() == "mob_zombie_noob")
+		{
+			it->setTexture("zombie_noob.png");
+			it->setCoord(Point( it->getCoord().x + (500 / sqrt( 1.0 * abs(it->getCoord().x - player.getCoord().x) * abs(it->getCoord().x - player.getCoord().x) + abs(it->getCoord().y - player.getCoord().y) * abs(it->getCoord().y - player.getCoord().y) ) ) * ((abs(it->getCoord().x - player.getCoord().x) / (it->getCoord().x - player.getCoord().x)) ), 
+								it->getCoord().y + (500 / sqrt( 1.0 * abs(it->getCoord().x - player.getCoord().x) * abs(it->getCoord().x - player.getCoord().x) + abs(it->getCoord().y - player.getCoord().y) * abs(it->getCoord().y - player.getCoord().y) ) ) * ((abs(it->getCoord().y - player.getCoord().y) / (it->getCoord().y - player.getCoord().y)) ))
+						);
+		}
 	}	
 
 	player.setCoord(mouse.getCoord());
