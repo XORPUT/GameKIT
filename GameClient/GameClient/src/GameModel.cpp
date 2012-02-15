@@ -61,6 +61,15 @@ void GameModel::GenerateSendListObjects()
 {
 	sendListObject->clear();
 
+	//Добавляю фон
+	GameObject *fon = new GameObject();
+	fon->setId( generatorId->GenerateId() );
+	fon->setType("Fon");
+	fon->setTexture("fon.jpg");
+	fon->setCoord(Point(0, 0));
+	sendListObject->push_back(*fon);
+	delete fon;
+
 	//Добавляю игрока
 	sendListObject->push_back(player);
 
@@ -75,15 +84,19 @@ void GameModel::GenerateSendListObjects()
 
 bool GameModel::FrameFunc()
 {
-	if (std::rand() % 10 + 1 == 1)
+	if (std::rand() % 30 + 1 == 1)
 	{
 		if (mobs->size()>200)
 		{
 			deleteMob(&mobs->at(0));
 			deleteMob(&mobs->at(0));
+			deleteMob(&mobs->at(0));
+			deleteMob(&mobs->at(0));
 		}
 		addMob("mob_zombie" ,Point((float)(std::rand() % 1000 - 200) ,(float)(std::rand() % 2 - 100)), "zombie.png");
 		addMob("mob_zombie", Point((float)(std::rand() % 1000 - 200) ,(float)(std::rand() % 2 + 600)), "zombie.png");
+		addMob("mob_zombie" ,Point((float)(std::rand() % 2 - 70) ,(float)(std::rand() % 800 - 100)), "zombie.png");
+		addMob("mob_zombie" ,Point((float)(std::rand() % 2 + 800) ,(float)(std::rand() % 800 - 100)), "zombie.png");
 	}
 
 	std::vector<GameObject_Mob>::iterator it;

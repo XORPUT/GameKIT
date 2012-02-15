@@ -71,14 +71,17 @@ void GameViewer::PaintListObject()
 {
 	gameEngine->Gfx_BeginScene();
 	gameEngine->Gfx_Clear(0);
-	hgeFont *fnt = new hgeFont("font1.fnt");
-	fnt->printf(5, 5, HGETEXT_LEFT, "Zombies:%.3d\nFPS:%d", arrayObjects->size(), gameEngine->Timer_GetFPS());
 
 	std::vector<GameObject>::iterator it;
 	for (it = arrayObjects->begin(); it != arrayObjects->end(); it++)
 	{
 		PaintObj( &*it ); //Бред, но ток так и работает...
 	}
+
+
+	hgeFont *fnt = new hgeFont("font1.fnt");
+	fnt->printf(5, 5, HGETEXT_LEFT, "Zombies:%.3d\nFPS:%d", arrayObjects->size(), gameEngine->Timer_GetFPS());
+	delete fnt;
 
 	gameEngine->Gfx_EndScene();
 };
